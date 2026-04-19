@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Web site</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #eee;
+        }
+
+        
+        .header {
+            background-color: blue;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-box {
+            padding: 5px;
+            width: 170px;
+            border: 1px solid #999;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .search-button {
+            padding: 5px 12px;
+            border: 1px solid #999;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        
+        .container {
+            display: flex;
+        }
+
+        
+        .sidebar {
+            width: 220px;
+            background-color: yellow;
+            padding: 15px;
+            min-height: 500px;
+        }
+
+        .sidebar ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+        }
+
+        
+        .content {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content img {
+            width: 300px;
+            margin: 20px auto 20px 0;
+            display: block;
+        }
+
+        .content p {
+            text-align:justify;
+            max-width: 800px;
+            margin:left;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <input type="text" id="search" class="search-box" ">
+        <button class="search-button" type="button">Search...</button>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="navigate('Home')">Home</a></li>
+                <li><a href="#" onclick="navigate('About us')">About us</a></li>
+                <li><a href="#" onclick="navigate('Contact us')">Contact us</a></li>
+                <li><a href="#" onclick="navigate('Doc')">Doc</a></li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>My Web site</h1>
+
+            <img src="img2.jpeg" alt="Website illustration">
+
+            <p>
+                As the software industry moves into the second decade of the 21st century,
+                software quality is increasingly becoming essential to all businesses and
+                knowledge of software testing is becoming necessary for all software engineers.
+                The course focuses on the theoretical concepts of Software Testing with high
+                emphasis on inclusion of the practical context which is equally needed to prepare
+                the learner for the demands of this field in the workplace.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function navigate(page) {
+            alert("You clicked: " + page);
+        }
+
+        // Simple search functionality
+        document.getElementById("search").addEventListener("keyup", function() {
+            let value = this.value.toLowerCase();
+            if (value) {
+                console.log("Searching for:", value);
+            }
+        });
+    </script>
+
+</body>
+</html>
